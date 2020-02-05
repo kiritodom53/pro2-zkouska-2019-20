@@ -56,6 +56,7 @@ public class MyFile {
     }
 
     public int countAllWords(){
+		allWords = new ArrayList<>();
         return allWords.size();
     }
 
@@ -68,6 +69,7 @@ public class MyFile {
     }
 
     private void sortWords(List<Word> list){
+		// sortovací algoritmus
         Collections.sort(list, Comparator.comparing(Word::getWord));
     }
 
@@ -77,19 +79,18 @@ public class MyFile {
     }
 
     public int getSentenceCount(){
-        String[] array = contents.split("\\.", -1);
         return array.length;
     }
 
     private void addWords(Map<String, Integer> frequencyMap){
         for (Map.Entry<String, Integer> entry : frequencyMap.entrySet()) {
-            Word word = new Word();
-            word.setWord(entry.getKey());
-            word.setWordCount(entry.getValue());
+            Word svet = new Word();
+            svet.setWord(entry.getKey());
+            svet.setWordCount(entry.getValue());
             System.out.println(entry.getValue());
             System.out.println(countAllWords());
-            word.setPercentage((double) entry.getValue() / (double)countAllWords());
-            words.add(word);
+            svet.setPercentage((double) entry.getValue() / (double)countAllWords());
+            words.add(svet);
         }
     }
 
