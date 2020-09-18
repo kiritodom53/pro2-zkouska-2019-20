@@ -29,16 +29,15 @@ public class AnalyzaApp extends JFrame{
             path = filePath.getPath().replace("\\", "\\\\");
         }
 
-        //myFile = new MyFile("C:\\Temp\\analyza.txt");
         myFile = new MyFile(path);
-        //============== TESTING
+
+        //============== TESTING OUTPUT
         System.out.println("==============================================");
         for (Word w : myFile.getNoDuplicatedWords()) {
             //System.out.println(w.getWord());
         }
         //System.out.println(myFile.countNoDublicateWords());
         System.out.println("==============================================");
-
         //==============
 
         try {
@@ -49,9 +48,6 @@ public class AnalyzaApp extends JFrame{
             System.exit(1);
         }
 
-        //tableModel = new WordsTableModel(myFile.getNoDuplicatedWords());
-
-        //table = new JTable(tableModel);
         System.out.println("prvek: ");
         System.out.println(tableModel.getValueAt(8,0));
         tableModel.refreshTable();
